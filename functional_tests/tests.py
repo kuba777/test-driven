@@ -1,9 +1,12 @@
+from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
 
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(LiveServerTestCase):
+    # remember, only methods that begin with test_ will get run as tests,
+    # so you can use other methods for your own purposes
 
     def setUp(self):
         self.browser = webdriver.Chrome()
